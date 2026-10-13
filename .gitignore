@@ -1,0 +1,57 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# C++ / CMake
+bridge_dll/build/
+bridge_dll/**/*.obj
+bridge_dll/**/*.pdb
+bridge_dll/**/*.ilk
+*.dll
+*.exe
+*.o
+*.obj
+*.exp
+*.lib
+
+# Arma 3 / HEMTT
+arma3_addon/.hemtt/
+arma3_addon/.hemttout/
+*.pbo
+*.bisign
+*.bikey
+@ArmaDevBridge/
+
+# C++ build cache
+bridge_dll/build_mingw/
+bridge_dll/build/
+
+# MCP config — contains absolute paths specific to each machine
+# Copy .mcp.json.example and fill in your paths
+.mcp.json
+
+# Claude Code local settings
+.claude/settings.local.json
+.claude/
+
+# Local reference data and deployment artifacts
+mcp_server/wiki/
+backups/
+*.log
+.env
+.env.*
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+
+# Windows
+Thumbs.db
+desktop.ini

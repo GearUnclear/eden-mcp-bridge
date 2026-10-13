@@ -1,0 +1,8 @@
+# Pinned for reproducible, audited installs. Install into a fresh venv.
+# All versions verified present on PyPI; bump deliberately and re-review.
+mcp[cli]==1.12.4
+pydantic==2.11.7
+anyio==4.10.0
+# Required at runtime by bridge_client.py (win32file / win32pipe / pywintypes);
+# it was imported but never declared as a dependency.
+pywin32==311

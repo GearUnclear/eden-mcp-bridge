@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "arma3-eden": {
+      "type": "stdio",
+      "command": "C:\\path\\to\\eden-mcp-bridge\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "mcp_server"],
+      "cwd": "C:\\path\\to\\eden-mcp-bridge",
+      "env": {
+        "ARMA3_BRIDGE_PIPE": "\\\\.\\pipe\\arma3_mcp_bridge",
+        "ARMA3_BRIDGE_TIMEOUT": "30"
+      }
+    }
+  }
+}

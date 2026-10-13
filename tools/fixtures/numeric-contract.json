@@ -1,0 +1,31 @@
+{
+  "accepted_ids": [
+    [0, 0], [1, 1], [1.0, 1], [16777215, 16777215],
+    ["0", 0], ["1", 1], ["001", 1], ["+1", 1], ["1.0", 1],
+    [".1e1", 1], ["1e0", 1], ["10e-1", 1], ["1.6777215e7", 16777215]
+  ],
+  "rejected_ids": [
+    true, false, null, [], {}, -1, 16777216, 1.5,
+    "", " ", " 1", "1 ", "1\n", "abc", "1abc", "0x10", "true",
+    "1+2", "[1]", "1;call code", ".", "+", "1e", "1e+", "1e-",
+    "NaN", "Inf", "1e100", "-1", "16777216", "1.5", "1.000000001",
+    "-1e-99", "16777215.00000001", "１"
+  ],
+  "accepted_coordinates": [
+    [0, 0.0], [-1, -1.0], [1.25, 1.25], ["-1.25", -1.25],
+    ["1e3", 1000.0], ["1E-3", 0.001], [".5", 0.5], ["1.", 1.0]
+  ],
+  "legacy_sides": [[-1, "ALL"], [0, "NEUTRAL"], [1, "EAST"], [2, "WEST"], [3, "GUER"], [4, "CIV"], [5, "AMBIENT"]],
+  "config_classes": [
+    {"classname": "B_Soldier_F", "config_side": 1, "side": "WEST"},
+    {"classname": "O_Soldier_F", "config_side": 0, "side": "EAST"},
+    {"classname": "I_Soldier_F", "config_side": 2, "side": "GUER"},
+    {"classname": "C_man_1", "config_side": 3, "side": "CIV"},
+    {"classname": "fixture_mod_west", "config_side": 1, "side": "WEST"},
+    {"classname": "fixture_mod_east", "config_side": 0, "side": "EAST"},
+    {"classname": "fixture_neutral", "config_side": 4, "side": "NEUTRAL"},
+    {"classname": "fixture_no_side", "config_side": -1, "side": "AMBIENT"},
+    {"classname": "fixture_empty", "config_side": 8, "side": "EMPTY"},
+    {"classname": "fixture_ambient", "config_side": 9, "side": "AMBIENT"}
+  ]
+}
