@@ -26,6 +26,8 @@ uiNamespace setVariable ["ArmaDevBridge_fnc_createEntity",       compile preproc
 uiNamespace setVariable ["ArmaDevBridge_fnc_deleteEntity",       compile preprocessFileLineNumbers (_base + "fn_deleteEntity.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_moveEntity",         compile preprocessFileLineNumbers (_base + "fn_moveEntity.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_groupEntities",      compile preprocessFileLineNumbers (_base + "fn_groupEntities.sqf")];
+uiNamespace setVariable ["ArmaDevBridge_fnc_createWaypoint",     compile preprocessFileLineNumbers (_base + "fn_createWaypoint.sqf")];
+uiNamespace setVariable ["ArmaDevBridge_fnc_describeGroup",      compile preprocessFileLineNumbers (_base + "fn_describeGroup.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_setAttribute",       compile preprocessFileLineNumbers (_base + "fn_setAttribute.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_getAttribute",       compile preprocessFileLineNumbers (_base + "fn_getAttribute.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_getSelected",        compile preprocessFileLineNumbers (_base + "fn_getSelected.sqf")];
@@ -45,6 +47,9 @@ uiNamespace setVariable ["ArmaDevBridge_fnc_getAllAttributes",      compile prep
 
 uiNamespace setVariable ["ArmaDevBridge_fnc_readNumber", compile preprocessFileLineNumbers (_base + "fn_readNumber.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_resolveEntity", compile preprocessFileLineNumbers (_base + "fn_resolveEntity.sqf")];
+uiNamespace setVariable ["ArmaDevBridge_fnc_resolveGroup", compile preprocessFileLineNumbers (_base + "fn_resolveGroup.sqf")];
+uiNamespace setVariable ["ArmaDevBridge_fnc_editorConnections", compile preprocessFileLineNumbers (_base + "fn_editorConnections.sqf")];
+uiNamespace setVariable ["ArmaDevBridge_fnc_writeAttribute", compile preprocessFileLineNumbers (_base + "fn_writeAttribute.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_attributeInfo", compile preprocessFileLineNumbers (_base + "fn_attributeInfo.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_readAttribute", compile preprocessFileLineNumbers (_base + "fn_readAttribute.sqf")];
 uiNamespace setVariable ["ArmaDevBridge_fnc_placementPosition", compile preprocessFileLineNumbers (_base + "fn_placementPosition.sqf")];
@@ -92,6 +97,8 @@ uiNamespace setVariable ["ArmaDevBridge_fnc_startBridge", {
     ArmaDevBridge_bridge_fnc_deleteEntity       = uiNamespace getVariable "ArmaDevBridge_fnc_deleteEntity";
     ArmaDevBridge_bridge_fnc_moveEntity         = uiNamespace getVariable "ArmaDevBridge_fnc_moveEntity";
     ArmaDevBridge_bridge_fnc_groupEntities      = uiNamespace getVariable "ArmaDevBridge_fnc_groupEntities";
+    ArmaDevBridge_bridge_fnc_createWaypoint     = uiNamespace getVariable "ArmaDevBridge_fnc_createWaypoint";
+    ArmaDevBridge_bridge_fnc_describeGroup      = uiNamespace getVariable "ArmaDevBridge_fnc_describeGroup";
     ArmaDevBridge_bridge_fnc_setAttribute       = uiNamespace getVariable "ArmaDevBridge_fnc_setAttribute";
     ArmaDevBridge_bridge_fnc_getAttribute       = uiNamespace getVariable "ArmaDevBridge_fnc_getAttribute";
     ArmaDevBridge_bridge_fnc_getSelected        = uiNamespace getVariable "ArmaDevBridge_fnc_getSelected";
@@ -111,6 +118,9 @@ uiNamespace setVariable ["ArmaDevBridge_fnc_startBridge", {
 
     ArmaDevBridge_bridge_fnc_readNumber = uiNamespace getVariable "ArmaDevBridge_fnc_readNumber";
     ArmaDevBridge_bridge_fnc_resolveEntity = uiNamespace getVariable "ArmaDevBridge_fnc_resolveEntity";
+    ArmaDevBridge_bridge_fnc_resolveGroup = uiNamespace getVariable "ArmaDevBridge_fnc_resolveGroup";
+    ArmaDevBridge_bridge_fnc_editorConnections = uiNamespace getVariable "ArmaDevBridge_fnc_editorConnections";
+    ArmaDevBridge_bridge_fnc_writeAttribute = uiNamespace getVariable "ArmaDevBridge_fnc_writeAttribute";
     ArmaDevBridge_bridge_fnc_attributeInfo = uiNamespace getVariable "ArmaDevBridge_fnc_attributeInfo";
     ArmaDevBridge_bridge_fnc_readAttribute = uiNamespace getVariable "ArmaDevBridge_fnc_readAttribute";
     ArmaDevBridge_bridge_fnc_placementPosition = uiNamespace getVariable "ArmaDevBridge_fnc_placementPosition";

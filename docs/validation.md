@@ -29,5 +29,10 @@ The first live pass exposed null grouping response fields, an exact-rotation com
 - Preview return, load/new scenario and terrain-change recovery, including pending-request cancellation and no duplicate mutations.
 - Remaining entity kinds, roof/structure placement, and the original modded 28-unit failure scenario.
 - Broader conditional mod attributes, player/playable coupling, empty Undo history, and manual-edit interleaving.
+- Crewed vehicles (`keep_crew`): car, tank, helicopter and static weapon crew counts, entity IDs and lowercase roles; the default remains empty.
+- A man created into an existing group via group, member and crewed-vehicle IDs; wrong-side and non-man rejection with nothing created; membership after save and reload.
+- Name and azimuth readback at creation for units, vehicles, triggers and logics; duplicate-name refusal (including different case); rollback of a forced failure, including crew and new groups but not an existing group.
+- Every `create_waypoint` type creates the expected waypoint. Each attribute reads back, including whether formation and speed are stored as strings or indices; mismatch deletes the waypoint; routes survive save and reload.
+- `describe_group` for infantry and crewed groups: leader, roles, variable names, the implicit starting waypoint (ID -1) and its position, waypoint order, and whether `editor_membership_verified` holds for vehicle crews.
 
 The historical timeout's exact root cause remains unproven. The package contains bounded and more explicit error handling, but does not claim that all timeout scenarios or performance bottlenecks have been eliminated. Immediate readback is not disk persistence. The release remains a candidate while these cases are outstanding.

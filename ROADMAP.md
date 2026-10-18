@@ -6,7 +6,7 @@ Complete the save/reload, group persistence, Preview lifecycle, modded scenario,
 
 ## Planned improvements
 
-- Bulk squad creation, configuration, grouping, and routes with explicit partial-failure handling.
+- Bulk squad creation, configuration, grouping, and routes with explicit partial-failure handling. Single-group waypoint creation and route readback exist (`create_waypoint`, `describe_group`, pending live acceptance); waypoints can be moved or deleted with the generic entity tools. Reordering, synchronisation, and multi-group routes do not.
 - Filtered entity queries and selectable fields to reduce large repeated responses.
 - Ranked faction/role asset searches.
 - Compact area reconnaissance and placement candidates.

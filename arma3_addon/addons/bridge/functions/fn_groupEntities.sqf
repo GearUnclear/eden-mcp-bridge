@@ -39,28 +39,8 @@ private _groups = [];
     };
     _groups pushBackUnique _group;
 } forEach _members;
-// Older engines return bare Group entities; newer versions use [kind,entity].
-// Only unambiguous bare membership/waypoint types are normalised.
-private _connections = {
-    params ["_entity"];
-    private _result = [];
-    {
-        private _link = _x;
-        if (_link isEqualType [] && {count _link == 2} && {(_link select 0) isEqualType ""}) then {
-            _result pushBack _link;
-        } else {
-            if ((_entity isEqualType objNull && {_link isEqualType grpNull} && {_link isEqualTo group _entity}) ||
-                {_entity isEqualType grpNull && {_link isEqualType objNull} && {_link in units _entity}}) then {
-                _result pushBack ["Group", _link];
-            } else {
-                if (_link isEqualType [] && {count _link == 2} && {(_link select 0) isEqualType grpNull} && {(_link select 1) isEqualType 0}) then {
-                    _result pushBack ["Waypoint", _link];
-                } else { throw "Unrecognised Eden connection format; grouping was not verified"; };
-            };
-        };
-    } forEach get3DENConnections _entity;
-    _result
-};
+// Shared normaliser for bare (older engine) and [kind,entity] connections.
+private _connections = ArmaDevBridge_bridge_fnc_editorConnections;
 // all3DENEntities: objects, groups, triggers, systems, waypoints, markers, layers, comments.
 private _waypoints = all3DENEntities param [4, []];
 private _targetRoutes = _waypoints select { (_x select 0) isEqualTo _target };
