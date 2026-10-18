@@ -243,9 +243,13 @@ class SQFContractChecks(unittest.TestCase):
         self.assertIn("surfaceIsWater", self.source("placementPosition"))
 
     def test_setter_uses_engine_result_and_readback(self):
+        # The validated write is shared with create_entity name/azimuth.
+        writer = self.source("writeAttribute")
+        self.assertIn("private _accepted = _entity set3DENAttribute", writer)
+        self.assertIn("[_effective, _value, _verificationTolerance] call ArmaDevBridge_bridge_fnc_attributeValuesMatch", writer)
         source = self.source("setAttribute")
-        self.assertIn("private _accepted = _entity set3DENAttribute", source)
-        self.assertIn("[_effective, _value, _verificationTolerance] call ArmaDevBridge_bridge_fnc_attributeValuesMatch", source)
+        self.assertIn("call ArmaDevBridge_bridge_fnc_writeAttribute", source)
+        self.assertIn("private _verified = _accepted && {_matches};", source)
         self.assertIn('["requested_value",_requested]', source)
         self.assertIn('["ok",_accepted]', source)
 

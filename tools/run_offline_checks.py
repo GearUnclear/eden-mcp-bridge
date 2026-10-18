@@ -10,7 +10,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 TESTS = ['test_protocol_catalog.py', 'test_persistence_contract.py',
-         'test_reads_attributes.py', 'test_integration_contract.py']
+         'test_reads_attributes.py', 'test_integration_contract.py',
+         'test_groups_waypoints.py']
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)

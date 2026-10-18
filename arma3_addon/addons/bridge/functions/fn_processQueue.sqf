@@ -106,6 +106,12 @@ switch (_cmd) do {
     case "group_entities": {
         [_id, _params] call ArmaDevBridge_bridge_fnc_groupEntities;
     };
+    case "create_waypoint": {
+        [_id, _params] call ArmaDevBridge_bridge_fnc_createWaypoint;
+    };
+    case "describe_group": {
+        [_id, _params] call ArmaDevBridge_bridge_fnc_describeGroup;
+    };
     case "set_attribute": {
         [_id, _params] call ArmaDevBridge_bridge_fnc_setAttribute;
     };

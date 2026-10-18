@@ -2,7 +2,9 @@
 
 Connect an MCP client to Arma 3's Eden Editor to build and edit missions.
 
-- **Place infantry groups** with proper Eden group connections.
+- **Place infantry groups** with proper Eden group connections, or add a soldier to an existing group.
+- **Place crewed vehicles** with their default AI crew, named and facing the right way.
+- **Give a group waypoints** with behaviour, speed, formation and combat mode, then read the route back with `describe_group`. Waypoint scripts are not supported.
 - **Rotate units** and set their position, height, and playable slots.
 - **Test without restarting the game:** preview your mission, return to Eden, and keep editing. Reconnect the MCP client with `reconnect_bridge` if needed.
 
@@ -54,7 +56,7 @@ Call `get_bridge_status` to check the connection: `connected` and `editor_open` 
 
 ## Using it
 
-Ask your client to place a squad, turn units toward a position, or make a unit playable. Preview the mission in Arma, then return to Eden to make changes. The bridge edits in Eden, not during Preview.
+Ask your client to place a squad, turn units toward a position, or make a unit playable. Preview the mission in Arma, then return to Eden to make changes. The bridge edits in Eden, not during Preview. See [groups, crews and waypoints](docs/groups-and-waypoints.md) for those options.
 
 Only one MCP client can connect at a time. If disconnected, confirm the mod is enabled and Eden is open, then use `reconnect_bridge`. Replacing the addon or DLL still requires closing Arma.
 

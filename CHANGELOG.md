@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+Offline-tested only; live Eden acceptance is listed in docs/validation.md.
+
+- Add `create_entity` options: `keep_crew` with crew readback (entity, class, role); `group_id` to create infantry inside an existing group; `name` and `azimuth` through set_attribute's validated write. Options are validated before creation, duplicate names are refused, and a failed readback deletes everything the request created. Responses report the entity's group.
+- Add `create_waypoint` for data-only, single-group waypoints: 17 types, behaviour, combat mode, speed, formation and completion radius, each read back, with deletion on mismatch. Script fields are rejected.
+- Add read-only `describe_group`: side, leader, members with vehicle roles, waypoints including the implicit start, and native membership comparison.
+- Share group resolution, Eden connection normalisation and the attribute write between handlers; set_attribute and group_entities behavior is unchanged.
+
 ## 1.2.0-rc.1 — 2026-10-13
 
 First independent public distribution, derived from diaverso/Arma3-Eden-Editor-MCP-Server at the baseline identified in ATTRIBUTION.md.

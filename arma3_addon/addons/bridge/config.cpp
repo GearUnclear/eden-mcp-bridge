@@ -23,6 +23,8 @@ class CfgFunctions {
             class deleteEntity          { description = "Handle delete_entity command"; };
             class moveEntity            { description = "Handle move_entity command"; };
             class groupEntities         { description = "Handle group_entities command"; };
+            class createWaypoint        { description = "Handle create_waypoint command"; };
+            class describeGroup         { description = "Handle describe_group command"; };
             class setAttribute          { description = "Handle set_attribute command"; };
             class getAttribute          { description = "Handle get_attribute command"; };
             class getSelected           { description = "Handle get_selected command"; };
@@ -40,6 +42,9 @@ class CfgFunctions {
             class getAllAttributes {};
             class readNumber {};
             class resolveEntity {};
+            class resolveGroup {};
+            class editorConnections {};
+            class writeAttribute {};
             class attributeInfo {};
             class readAttribute {};
             class placementPosition {};
