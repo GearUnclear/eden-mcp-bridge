@@ -43,11 +43,25 @@ try {
 };
 missionNamespace setVariable ["ArmaDevBridge_responseStage", "group_waypoints"];
 private _editorWaypoints = (all3DENEntities param [4, []]) select { (_x select 0) isEqualTo _group };
-private _waypoints = (waypoints _group) apply {
+// In Eden the runtime list can be empty even when editor waypoints exist
+// (observed live), so merge the Eden list in and order by index.
+private _source = +(waypoints _group);
+{ if !(_x in _source) then { _source pushBack _x; }; } forEach _editorWaypoints;
+_source = [_source, [], { _x select 1 }, "ASCEND"] call BIS_fnc_sortBy;
+private _waypoints = _source apply {
     private _waypoint = _x;
     private _waypointId = get3DENEntityID _waypoint;
     if (isNil "_waypointId") then { _waypointId = -1; };
     private _type = waypointType _waypoint;
+    if (_type isEqualTo "" && {_waypointId >= 0}) then {
+        ([_waypoint, "itemClass"] call ArmaDevBridge_bridge_fnc_readAttribute) params ["_classAvailable", "_class"];
+        if (_classAvailable && {_class isEqualType ""}) then {
+            private _classes = ["move","seekanddestroy","destroy","getin","getout","hold","guard","sentry","loiter","cycle","unload","transportunload","load","dismiss","support","join","leader"];
+            private _types = ["MOVE","SAD","DESTROY","GETIN","GETOUT","HOLD","GUARD","SENTRY","LOITER","CYCLE","UNLOAD","TR_UNLOAD","LOAD","DISMISS","SUPPORT","JOIN","LEADER"];
+            private _at = _classes find (toLower _class);
+            _type = if (_at >= 0) then { _types select _at } else { _class };
+        };
+    };
     if (_type isEqualTo "TR UNLOAD") then { _type = "TR_UNLOAD"; };
     private _position = waypointPosition _waypoint;
     if (_waypointId >= 0) then {
